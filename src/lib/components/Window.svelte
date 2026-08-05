@@ -72,11 +72,37 @@
 		if (hasSetInitialPosition || !windowElement) return;
 
 		const { width: windowWidth, height: windowHeight } = windowElement.getBoundingClientRect();
+		const centeredX = (globalThis.innerWidth - windowWidth) / 2;
+		const centeredY = (globalThis.innerHeight - windowHeight) / 2;
+		const clampedPosition = clampPosition(initialX ?? centeredX, initialY ?? centeredY);
 
-		x = initialX ?? (globalThis.innerWidth - windowWidth) / 2;
-		y = initialY ?? (globalThis.innerHeight - windowHeight) / 2;
+		x = clampedPosition.x;
+		y = clampedPosition.y;
 		hasSetInitialPosition = true;
 	});
+
+	function clamp(value: number, min: number, max: number) {
+		return Math.min(Math.max(value, min), max);
+	}
+
+	function clampPosition(nextX: number, nextY: number) {
+		const { width: windowWidth, height: windowHeight } = windowElement.getBoundingClientRect();
+		const maxX = Math.max(globalThis.innerWidth - windowWidth, 0);
+		const maxY = Math.max(globalThis.innerHeight - windowHeight, 0);
+
+		return {
+			x: clamp(nextX, 0, maxX),
+			y: clamp(nextY, 0, maxY)
+		};
+	}
+
+	function keepInsideViewport() {
+		if (!windowElement) return;
+
+		const clampedPosition = clampPosition(x, y);
+		x = clampedPosition.x;
+		y = clampedPosition.y;
+	}
 
 	function startDragging(event: PointerEvent) {
 		isDragging = true;
@@ -90,8 +116,9 @@
 	function drag(event: PointerEvent) {
 		if (!isDragging) return;
 
-		x = event.clientX - dragOffsetX;
-		y = event.clientY - dragOffsetY;
+		const clampedPosition = clampPosition(event.clientX - dragOffsetX, event.clientY - dragOffsetY);
+		x = clampedPosition.x;
+		y = clampedPosition.y;
 	}
 
 	function stopDragging(event: PointerEvent) {
@@ -103,6 +130,8 @@
 		}
 	}
 </script>
+
+<svelte:window onresize={keepInsideViewport} />
 
 <section
 	bind:this={windowElement}
