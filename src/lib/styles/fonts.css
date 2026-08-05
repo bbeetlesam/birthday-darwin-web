@@ -1,0 +1,28 @@
+/* Proxima-Soft font (i like it) */
+@font-face {
+	font-family: 'Proxima Soft';
+	src: url('../assets/fonts/Proxima-Soft.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Proxima Soft';
+	src: url('../assets/fonts/Proxima-Soft-Bold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Proxima Soft';
+	src: url('../assets/fonts/Proxima-Soft-Extrabold.otf') format('opentype');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--font-sans: 'Proxima Soft', ui-sans-serif, system-ui, sans-serif;
+}
