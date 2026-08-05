@@ -19,39 +19,28 @@
 		distance = '280px'
 	}: Props = $props();
 
+	const backgroundStyle = $derived(`background-color: ${backgroundColor};`);
+
 	const patternStyle = $derived(`
-		--pattern-image: url("${image}");
-		--pattern-background-color: ${backgroundColor};
-		--pattern-size: ${size};
-		--pattern-opacity: ${opacity};
-		--pattern-angle: ${angle};
 		--pattern-speed: ${speed};
 		--pattern-distance: ${distance};
+		background-image: url("${image}");
+		background-size: ${size} ${size};
+		transform: rotate(${angle});
+		opacity: ${opacity};
 	`);
 </script>
 
-<div class="pattern-background" style={patternStyle} aria-hidden="true">
-	<div class="moving-pattern"></div>
+<div
+	class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+	style={backgroundStyle}
+	aria-hidden="true"
+>
+	<div class="moving-pattern absolute inset-[-50%] bg-repeat" style={patternStyle}></div>
 </div>
 
 <style>
-	.pattern-background {
-		pointer-events: none;
-		position: fixed;
-		inset: 0;
-		z-index: -10;
-		overflow: hidden;
-		background-color: var(--pattern-background-color);
-	}
-
 	.moving-pattern {
-		position: absolute;
-		inset: -50%;
-		background-image: var(--pattern-image);
-		background-repeat: repeat;
-		background-size: var(--pattern-size) var(--pattern-size);
-		transform: rotate(var(--pattern-angle));
-		opacity: var(--pattern-opacity);
 		animation: move-diagonal var(--pattern-speed) linear infinite;
 	}
 
