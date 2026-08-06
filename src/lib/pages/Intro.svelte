@@ -1,6 +1,7 @@
 <script lang="ts">
 	import darwinOpenImg from '$lib/assets/images/darwin-smileopen.png';
 	import darwinShutImg from '$lib/assets/images/darwin-smileshut.png';
+	import nextKeyImg from '$lib/assets/images/key-blue.png';
 	import Window from '$lib/components/Window.svelte';
 
 	type WindowConfig = {
@@ -51,12 +52,12 @@
 		}));
 	});
 
-	$effect(() => {
+	function completeIntro() {
 		if (!allWindowsSmiled || hasCompleted) return;
 
 		hasCompleted = true;
 		onComplete?.(NEXT_SCENE);
-	});
+	}
 
 	function smileWindow(id: number) {
 		windows = windows.map((windowConfig) =>
@@ -64,6 +65,21 @@
 		);
 	}
 </script>
+
+{#if allWindowsSmiled && !hasCompleted}
+	<button
+		type="button"
+		class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer bg-transparent p-0"
+		onclick={completeIntro}
+		aria-label="Continue to the next scene"
+	>
+		<img
+			src={nextKeyImg}
+			alt="Continue"
+			class="floating-key box-shadow-[0 1.25rem 3rem rgb(0 0 0 / 0.2)] h-auto w-16 rotate-20"
+		/>
+	</button>
+{/if}
 
 <!-- randomly placed windows -->
 {#each windows as windowConfig (windowConfig.id)}
@@ -92,3 +108,20 @@
 		</div>
 	</Window>
 {/each}
+
+<style>
+	.floating-key {
+		animation: float-key 2.4s ease-in-out infinite;
+	}
+
+	@keyframes float-key {
+		0%,
+		100% {
+			transform: translateY(0) rotate(25deg);
+		}
+
+		50% {
+			transform: translateY(-0.75rem) rotate(25deg);
+		}
+	}
+</style>
