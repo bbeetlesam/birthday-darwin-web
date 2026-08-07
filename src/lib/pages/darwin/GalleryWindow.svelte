@@ -104,7 +104,7 @@
 					</div>
 
 					<div
-						class={`shrink-0 border-t-2 border-[#2f2f2f] px-2 py-1 ${isUnlocked ? 'bg-[#f2d3dd]' : 'bg-zinc-400'}`}
+						class={`shrink-0 border-t-2 border-[#2f2f2f] px-2 py-1 ${isUnlocked ? 'bg-[#e8d7ff]' : 'bg-zinc-400'}`}
 					>
 						<button
 							type="button"
