@@ -1,3 +1,12 @@
+<script lang="ts" module>
+	let topWindowZIndex = 10;
+
+	function getNextWindowZIndex() {
+		topWindowZIndex += 1;
+		return topWindowZIndex;
+	}
+</script>
+
 <script lang="ts">
 	type WindowStyle = {
 		borderRadius?: string;
@@ -49,6 +58,7 @@
 	let x = $state(0);
 	let y = $state(0);
 	let isDragging = $state(false);
+	let zIndex = $state(getNextWindowZIndex());
 	let dragOffsetX = 0;
 	let dragOffsetY = 0;
 	let hasSetInitialPosition = $state(false);
@@ -58,6 +68,7 @@
 		width: ${width};
 		height: ${height};
 		visibility: ${hasSetInitialPosition ? 'visible' : 'hidden'};
+		z-index: ${zIndex};
 		border-color: ${windowStyle.borderColor};
 		border-width: ${windowStyle.borderWidth};
 		border-radius: ${windowStyle.borderRadius};
@@ -113,6 +124,10 @@
 		y = clampedPosition.y;
 	}
 
+	function bringToFront() {
+		zIndex = getNextWindowZIndex();
+	}
+
 	function startDragging(event: PointerEvent) {
 		isDragging = true;
 		dragOffsetX = event.clientX - x;
@@ -149,8 +164,10 @@
 
 <section
 	bind:this={windowElement}
-	class="fixed top-0 left-0 z-10 flex flex-col overflow-hidden border-solid bg-white"
+	class="fixed top-0 left-0 flex flex-col overflow-hidden border-solid bg-white"
 	style={frameStyle}
+	onpointerdown={bringToFront}
+	role="presentation"
 >
 	<header class="flex min-h-9 items-center border-0 border-solid text-[#2f2f2f]" style={statusbarStyle}>
 		<button
