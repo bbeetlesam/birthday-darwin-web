@@ -23,6 +23,8 @@
 		windowInitialX?: number;
 		windowInitialY?: number;
 		windowStyle?: WindowStyle;
+		windowShowCloseButton?: boolean;
+		initiallyOpen?: boolean;
 		children?: import('svelte').Snippet;
 	};
 
@@ -37,6 +39,8 @@
 		windowInitialX,
 		windowInitialY,
 		windowStyle = {},
+		windowShowCloseButton = true,
+		initiallyOpen = false,
 		children
 	}: Props = $props();
 
@@ -45,6 +49,7 @@
 	let shortcutElement: HTMLButtonElement;
 	let isOpen = $state(false);
 	let isSelected = $state(false);
+	let hasSetInitialOpen = false;
 
 	const shortcutStyle = $derived(`translate: ${x}px ${y}px;`);
 
@@ -72,6 +77,17 @@
 		isOpen = true;
 		isSelected = true;
 	}
+
+	function closeWindow() {
+		isOpen = false;
+	}
+
+	$effect(() => {
+		if (hasSetInitialOpen) return;
+
+		isOpen = initiallyOpen;
+		hasSetInitialOpen = true;
+	});
 
 	$effect(() => {
 		window.addEventListener(SELECT_SHORTCUT_EVENT, handleShortcutSelect);
@@ -111,6 +127,8 @@
 		width={windowWidth}
 		height={windowHeight}
 		style={windowStyle}
+		showCloseButton={windowShowCloseButton}
+		onClose={closeWindow}
 	>
 		{@render children?.()}
 	</Window>
