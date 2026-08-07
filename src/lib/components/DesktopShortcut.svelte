@@ -1,17 +1,6 @@
 <script lang="ts">
+	import type { WindowStyle } from '$lib/types';
 	import Window from '$lib/components/Window.svelte';
-
-	type WindowStyle = {
-		borderRadius?: string;
-		borderColor?: string;
-		borderWidth?: string;
-		statusbarColor?: string;
-		statusbarSeparatorColor?: string;
-		statusbarSeparatorWidth?: string;
-		contentPadding?: string;
-		contentBackgroundColor?: string;
-		boxShadow?: string;
-	};
 
 	type Props = {
 		icon: string;

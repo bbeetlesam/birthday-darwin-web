@@ -8,17 +8,7 @@
 </script>
 
 <script lang="ts">
-	type WindowStyle = {
-		borderRadius?: string;
-		borderColor?: string;
-		borderWidth?: string;
-		statusbarColor?: string;
-		statusbarSeparatorColor?: string;
-		statusbarSeparatorWidth?: string;
-		contentPadding?: string;
-		contentBackgroundColor?: string;
-		boxShadow?: string;
-	};
+	import type { WindowStyle } from '$lib/types';
 
 	type Props = {
 		title?: string;
@@ -174,7 +164,10 @@
 	onpointerdown={bringToFront}
 	role="presentation"
 >
-	<header class="flex min-h-9 items-center border-0 border-solid text-[#2f2f2f]" style={statusbarStyle}>
+	<header
+		class="flex min-h-9 items-center border-0 border-solid text-[#2f2f2f]"
+		style={statusbarStyle}
+	>
 		<button
 			type="button"
 			class={`flex min-h-9 flex-1 touch-none items-center px-3.5 text-left font-bold select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
@@ -190,14 +183,12 @@
 		{#if showCloseButton}
 			<button
 				type="button"
-				class="mr-[0.3rem] flex h-6 w-6 cursor-pointer rounded items-center justify-center border-solid bg-red-400 text-sm leading-none font-bold hover:bg-red-600"
+				class="mr-[0.3rem] flex h-6 w-6 cursor-pointer items-center justify-center rounded border-solid bg-red-400 text-sm leading-none font-bold hover:bg-red-600"
 				style={closeButtonStyle}
 				onclick={closeWindow}
 				aria-label={`Close ${title}`}
 			>
-			<span class="translate-x-[0.1px] translate-y-[0.3px]">
-					X
-			</span>
+				<span class="translate-x-[0.1px] translate-y-[0.3px]"> X </span>
 			</button>
 		{/if}
 	</header>
