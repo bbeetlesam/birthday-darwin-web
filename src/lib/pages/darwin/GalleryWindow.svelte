@@ -2,6 +2,13 @@
 	import type { GalleryItem } from '$lib/types';
 	import { galleryEntries } from '$lib/pages/darwin/gallery-entries';
 
+	type Props = {
+		unlockedEntryIds?: string[];
+		onEntryOpen?: (entryId: string) => void;
+	};
+
+	let { unlockedEntryIds = galleryEntries.map((entry) => entry.id), onEntryOpen }: Props = $props();
+
 	const ITEMS_PER_PAGE = 6; // 2 rows x 3 columns
 	const TOTAL_PAGES = Math.ceil(galleryEntries.length / ITEMS_PER_PAGE);
 	const pageIndexes = Array.from({ length: TOTAL_PAGES }, (_, index) => index);
@@ -28,8 +35,15 @@
 		currentPage = page;
 	}
 
+	function isEntryUnlocked(entry: GalleryItem) {
+		return unlockedEntryIds.includes(entry.id);
+	}
+
 	function openEntry(entry: GalleryItem) {
+		if (!isEntryUnlocked(entry)) return;
+
 		selectedEntry = entry;
+		onEntryOpen?.(entry.id);
 	}
 
 	function closeEntry() {
@@ -70,20 +84,35 @@
 	<div class="flex h-full min-h-0 flex-col gap-3">
 		<div class="grid min-h-0 flex-1 grid-cols-3 grid-rows-2 gap-3">
 			{#each currentEntries as entry (entry.id)}
+				{@const isUnlocked = isEntryUnlocked(entry)}
+
 				<article
-					class="flex min-h-0 flex-col overflow-hidden rounded-lg border-2 border-[#2f2f2f] bg-[#fff7d6]"
+					class={`flex min-h-0 flex-col overflow-hidden rounded-lg border-2 border-[#2f2f2f] ${isUnlocked ? 'bg-[#fff7d6]' : 'bg-zinc-200'}`}
 				>
-					<div class="min-h-0 flex-1 overflow-hidden bg-[#d9ecff] p-2">
-						<img src={entry.image} alt={entry.title} class="h-full w-full object-contain" />
+					<div
+						class={`min-h-0 flex-1 overflow-hidden p-2 ${isUnlocked ? 'bg-[#d9ecff]' : 'bg-zinc-300'}`}
+					>
+						{#if isUnlocked}
+							<img src={entry.image} alt={entry.title} class="h-full w-full object-contain" />
+						{:else}
+							<div
+								class="flex h-full w-full items-center justify-center text-xl font-extrabold text-zinc-600"
+							>
+								N/A
+							</div>
+						{/if}
 					</div>
 
-					<div class="shrink-0 border-t-2 border-[#2f2f2f] bg-[#f2d3dd] px-2 py-1">
+					<div
+						class={`shrink-0 border-t-2 border-[#2f2f2f] px-2 py-1 ${isUnlocked ? 'bg-[#f2d3dd]' : 'bg-zinc-400'}`}
+					>
 						<button
 							type="button"
-							class="w-full cursor-pointer truncate text-center text-sm font-bold text-[#2f2f2f] hover:underline"
+							class={`w-full truncate text-center text-sm font-bold text-[#2f2f2f] ${isUnlocked ? 'cursor-pointer hover:underline' : 'cursor-default'}`}
+							disabled={!isUnlocked}
 							onclick={() => openEntry(entry)}
 						>
-							{entry.title}
+							{isUnlocked ? entry.title : 'None'}
 						</button>
 					</div>
 				</article>
