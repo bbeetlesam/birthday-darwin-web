@@ -7,6 +7,7 @@
 	{@const WindowContent = app.WindowContent}
 
 	<Desktop
+		id={app.id}
 		icon={app.icon}
 		title={app.title}
 		x={app.x}

@@ -1,6 +1,14 @@
 <script lang="ts">
 	import darwinImg from '$lib/assets/images/darwin-hat.png';
 	import circleImg from '$lib/assets/images/roughcircleblue.png';
+
+	function openGallery() {
+		window.dispatchEvent(new CustomEvent('open-desktop-app', { detail: { id: 'gallery' } }));
+	}
+
+	function openWho() {
+		window.dispatchEvent(new CustomEvent('open-desktop-app', { detail: { id: 'who' } }));
+	}
 </script>
 
 <div class="relative h-full overflow-hidden">
@@ -43,12 +51,14 @@
 			<button
 				type="button"
 				class="cursor-pointer rounded-lg border-2 bg-amber-100 px-3 py-1 hover:bg-amber-200"
+				onclick={openGallery}
 			>
 				Try to see Darwin?
 			</button>
 			<button
 				type="button"
 				class="cursor-pointer rounded-lg border-2 bg-amber-100 px-3 py-1 hover:bg-amber-200"
+				onclick={openWho}
 			>
 				Try to know Darwin?
 			</button>

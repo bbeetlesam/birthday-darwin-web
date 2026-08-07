@@ -3,6 +3,7 @@
 	import Window from '$lib/components/Window.svelte';
 
 	type Props = {
+		id?: string;
 		icon: string;
 		title: string;
 		x?: number;
@@ -19,6 +20,7 @@
 	};
 
 	let {
+		id,
 		icon,
 		title,
 		x = 0,
@@ -85,6 +87,20 @@
 		return () => {
 			window.removeEventListener(SELECT_SHORTCUT_EVENT, handleShortcutSelect);
 		};
+	});
+
+	$effect(() => {
+		const handler = (e: Event) => {
+			const d = (e as CustomEvent<{ id?: string }>).detail;
+			if (d?.id && d?.id === id) {
+				isOpen = true;
+				isSelected = true;
+			}
+		};
+
+		window.addEventListener('open-desktop-app', handler);
+
+		return () => window.removeEventListener('open-desktop-app', handler);
 	});
 </script>
 
