@@ -11,6 +11,7 @@ export type DesktopApp = {
 	windowWidth?: string;
 	windowHeight?: string;
 	initiallyOpen?: boolean;
+	windowShowCloseButton?: boolean;
 	windowStyle?: WindowStyle;
 	WindowContent: Component;
 };
