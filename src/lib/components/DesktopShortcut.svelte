@@ -9,6 +9,7 @@
 		statusbarSeparatorColor?: string;
 		statusbarSeparatorWidth?: string;
 		contentPadding?: string;
+		contentBackgroundColor?: string;
 		boxShadow?: string;
 	};
 

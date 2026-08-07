@@ -16,6 +16,7 @@
 		statusbarSeparatorColor?: string;
 		statusbarSeparatorWidth?: string;
 		contentPadding?: string;
+		contentBackgroundColor?: string;
 		boxShadow?: string;
 	};
 
@@ -51,6 +52,7 @@
 		statusbarSeparatorColor: style.statusbarSeparatorColor ?? style.borderColor ?? '#2f2f2f',
 		statusbarSeparatorWidth: style.statusbarSeparatorWidth ?? style.borderWidth ?? '2px',
 		contentPadding: style.contentPadding ?? '1rem',
+		contentBackgroundColor: style.contentBackgroundColor ?? 'white',
 		boxShadow: style.boxShadow ?? '0 1.25rem 3rem rgb(0 0 0 / 0.2)'
 	});
 
@@ -86,7 +88,10 @@
 		border-width: ${windowStyle.borderWidth};
 	`);
 
-	const contentStyle = $derived(`padding: ${windowStyle.contentPadding};`);
+	const contentStyle = $derived(`
+		padding: ${windowStyle.contentPadding};
+		background-color: ${windowStyle.contentBackgroundColor};
+	`);
 
 	$effect(() => {
 		if (hasSetInitialPosition || !windowElement) return;
