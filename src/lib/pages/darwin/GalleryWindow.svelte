@@ -68,7 +68,7 @@
 			</div>
 		</div>
 
-		<div class="min-h-0 flex-1 overflow-auto rounded-lg border-2 border-[#2f2f2f] bg-white/80 p-3">
+		<div class="min-h-0 flex-1 overflow-auto rounded-lg border-2 border-[#2f2f2f] bg-[#fff0c8] p-3">
 			<p>{selectedEntry.longDesc}</p>
 		</div>
 
@@ -108,7 +108,7 @@
 					>
 						<button
 							type="button"
-							class={`w-full truncate text-center text-sm font-bold text-[#2f2f2f] ${isUnlocked ? 'cursor-pointer hover:underline' : 'cursor-default'}`}
+							class={`w-full truncate text-center text-sm font-bold text-[#2f2f2f] ${isUnlocked ? 'cursor-pointer hover:font-extrabold' : 'cursor-default'}`}
 							disabled={!isUnlocked}
 							onclick={() => openEntry(entry)}
 						>
