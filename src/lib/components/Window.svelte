@@ -17,6 +17,8 @@
 		width?: string;
 		height?: string;
 		style?: WindowStyle;
+		showCloseButton?: boolean;
+		onClose?: () => void;
 		children?: import('svelte').Snippet;
 	};
 
@@ -27,6 +29,8 @@
 		width = '320px',
 		height = '260px',
 		style = {},
+		showCloseButton = false,
+		onClose,
 		children
 	}: Props = $props();
 
@@ -64,6 +68,11 @@
 		background-color: ${windowStyle.statusbarColor};
 		border-bottom-color: ${windowStyle.statusbarSeparatorColor};
 		border-bottom-width: ${windowStyle.statusbarSeparatorWidth};
+	`);
+
+	const closeButtonStyle = $derived(`
+		border-color: ${windowStyle.borderColor};
+		border-width: ${windowStyle.borderWidth};
 	`);
 
 	const contentStyle = $derived(`padding: ${windowStyle.contentPadding};`);
@@ -129,6 +138,11 @@
 			target.releasePointerCapture(event.pointerId);
 		}
 	}
+
+	function closeWindow(event: MouseEvent) {
+		event.stopPropagation();
+		onClose?.();
+	}
 </script>
 
 <svelte:window onresize={keepInsideViewport} />
@@ -138,18 +152,33 @@
 	class="fixed top-0 left-0 z-10 flex flex-col overflow-hidden border-solid bg-white"
 	style={frameStyle}
 >
-	<button
-		type="button"
-		class={`flex min-h-9 touch-none items-center border-0 border-solid px-3.5 text-left font-bold text-[#2f2f2f] select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-		style={statusbarStyle}
-		onpointerdown={startDragging}
-		onpointermove={drag}
-		onpointerup={stopDragging}
-		onpointercancel={stopDragging}
-		aria-label={`Move ${title}`}
-	>
-		<span>{title}</span>
-	</button>
+	<header class="flex min-h-9 items-center border-0 border-solid text-[#2f2f2f]" style={statusbarStyle}>
+		<button
+			type="button"
+			class={`flex min-h-9 flex-1 touch-none items-center px-3.5 text-left font-bold select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+			onpointerdown={startDragging}
+			onpointermove={drag}
+			onpointerup={stopDragging}
+			onpointercancel={stopDragging}
+			aria-label={`Move ${title}`}
+		>
+			<span>{title}</span>
+		</button>
+
+		{#if showCloseButton}
+			<button
+				type="button"
+				class="mr-[0.3rem] flex h-6 w-6 cursor-pointer rounded items-center justify-center border-solid bg-red-400 text-sm leading-none font-bold hover:bg-red-600"
+				style={closeButtonStyle}
+				onclick={closeWindow}
+				aria-label={`Close ${title}`}
+			>
+			<span class="translate-x-[0.1px] translate-y-[0.3px]">
+					X
+			</span>
+			</button>
+		{/if}
+	</header>
 
 	<div class="flex-1 overflow-hidden" style={contentStyle}>
 		{@render children?.()}
