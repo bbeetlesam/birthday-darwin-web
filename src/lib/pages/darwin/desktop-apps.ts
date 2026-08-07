@@ -25,9 +25,12 @@ export const desktopApps: DesktopApp[] = [
 		x: 5,
 		y: 175,
 		windowTitle: 'Gallery',
-		windowWidth: '650px',
+		windowWidth: '600px',
 		windowHeight: '500px',
-		WindowContent: GalleryWindow
+    WindowContent: GalleryWindow,
+    windowStyle: {
+      contentBackgroundColor: '#f3f3f3'
+    }
 	},
 	{
 		id: 'greet',
