@@ -17,41 +17,41 @@ export const galleryEntries: GalleryItem[] = [
 		id: 'normal-darwin',
 		title: 'I am Darwin',
 		image: normalDarwinImg,
-		shortDesc: 'Darwin starts the day with suspicious confidence.',
+		shortDesc: 'My full name is Darwin Watterson!',
 		longDesc:
-			'A placeholder memory for a future image of Darwin greeting the morning with too much confidence and not enough context.'
+			"Ready to face the day with a fully soul of energy and a fully empty stomach! Let's see what this day has prepared for me to face, and what I have prepared to face it with."
 	},
 	{
 		id: 'think-darwin',
 		title: "I'm thinking..",
 		image: thinkDarwinImg,
-		shortDesc: 'A small question becomes a whole investigation.',
+		shortDesc: 'What comes first, your love or mine?',
 		longDesc:
-			'A placeholder memory for a future image of Darwin looking deeply curious, probably about something that was never meant to be that serious.'
+			"Inside of my head-sized brain, the amount of thinking I am doing is directly proportional to the amount of love I am feeling. Is God real? Is Darwin right about his theory of evolution? Is love real? Is it? Anyway at least you're one of my dreams that came true."
 	},
 	{
 		id: 'mesmerised-darwin',
 		title: "I think I'm in love",
 		image: mesmerisedDarwinImg,
-		shortDesc: 'Darwin appears exactly when the party gets weird.',
+		shortDesc: "Can't stand the curse.",
 		longDesc:
-			'A placeholder memory for a future party scene where Darwin somehow becomes the unofficial mascot of the entire situation.'
+			"Glance at her, I think I would be in trouble of never-ending spokesman if my eyes are asked to describe the view. Mesmerised, blushed, and completely lost in your beauty. Thank God you're not Medusa."
 	},
 	{
 		id: 'full-darwin',
 		title: 'Ready for a picture!',
 		image: fullDarwinImg,
-		shortDesc: 'The energy is gone, but the expression remains.',
+		shortDesc: 'Is the pict already taken?',
 		longDesc:
-			'A placeholder memory for a future image of Darwin being sleepy, peaceful, and maybe slightly disappointed by the concept of wakefulness.'
+			"Look at me! I am a good boy, well-behaved, well-shaped, and most importantly, cool-dressed! Look at these shoes I'm wearing! Don't you think they're neat? I took all these efforts just to amaze you!"
 	},
 	{
 		id: 'suspecting-darwin',
 		title: "Something's off.",
 		image: suspectingDarwinImg,
-		shortDesc: 'Something happened, and Darwin knows too much.',
+		shortDesc: 'I think I smell a rat.',
 		longDesc:
-			'A placeholder memory for a future image where Darwin investigates clues with dramatic seriousness and absolutely no official authority.'
+			"Something's off. I can feel it in my bones. I can smell it in the air. I can see it in your eyes. I can hear it in your voice. I can taste it in your words. Something's off. But I seem to like it."
 	},
 	{
 		id: 'screaming-darwin',
@@ -59,54 +59,54 @@ export const galleryEntries: GalleryItem[] = [
 		image: screamingDarwinImg,
 		shortDesc: 'In the court of the Darwin King!',
 		longDesc:
-			'A placeholder memory for a future tiny Darwin image that proves size has no relationship with emotional impact.'
+			"ARRRGHHH!!!! I'M GOINGGGG INSANNNEEEEE!!!! MAKE SUREEE TO NOT BITE MY OWN TONGUEEEEEEE!!! COME BACK SOOOOON!!!!!"
 	},
 	{
 		id: 'party-darwin',
 		title: 'We only live once',
 		image: partyDarwinImg,
-		shortDesc: 'A calm face in a very not-calm situation.',
+		shortDesc: 'Turning twenty is scary sometimes.',
 		longDesc:
-			'A placeholder memory for a future image of Darwin standing near chaos, either causing it or pretending not to notice it.'
+			"This life already offered me bits of goods and bads, and I have already taken my share of both. But now that I'm twenty, I feel like I should take a little more of the good stuff, and a little less of the bad stuff. So let's party!"
 	},
 	{
 		id: 'cutethink-darwin',
 		title: "I'm thinking.. cutely!",
 		image: cuteThinkingDarwinImg,
-		shortDesc: 'A noble pose for a questionable kingdom.',
+		shortDesc: 'Spare me your love, may you? :3',
 		longDesc:
-			'A placeholder memory for a future image of Darwin looking royal, regal, and probably unqualified to rule anything.'
+			"U-um... I'm just thinking... Don't you think that you're b-beautiful? Because I think so <3"
 	},
 	{
 		id: 'laughing-darwin',
 		title: 'I know what kind of man you are',
 		image: laughingDarwinImg,
-		shortDesc: 'Nobody knows what Darwin is thinking. Maybe Darwin does not either.',
+		shortDesc: 'I get it.',
 		longDesc:
-			'A placeholder memory for a future mysterious Darwin image, full of unanswered questions and dramatic silence.'
+			"Hohoho... I get it now. Do you think I'm a fool? I now understand all of these, you jester. But I will still pretend to fall into your tricks, you witted fox."
 	},
 	{
 		id: 'bizarre-darwin',
 		title: 'Wait, this looks like',
 		image: bizarreDarwinImg,
-		shortDesc: 'Fear is present. Darwin simply ignores it.',
+		shortDesc: "I think I'm high.",
 		longDesc:
-			'A placeholder memory for a future image of Darwin being brave in the face of something probably very silly.'
+			"Or am I? Wait, like, really, look at this. Carefully inspect it. I think I see a resemblance of something, I guess? It loosk like.. a thign.. somehting fmailiar.. yeah I think I'm drunk."
 	},
 	{
 		id: 'joy-darwin',
 		title: 'I got an A+!',
 		image: joyDarwinImg,
-		shortDesc: 'The math is not mathing.',
+		shortDesc: 'No one can beat my happiness right now!!',
 		longDesc:
-			'A placeholder memory for a future image where Darwin confronts confusion directly and receives no useful answers.'
+			'I got a new drum kit! And I got some cash from my parents! And I got a new part-time job! And I got a lot of beloved friends! And I like you! And I feel loved! I am alive!'
 	},
 	{
 		id: 'pitiful-darwin',
 		title: 'Will you..?',
 		image: pitifulDarwinImg,
-		shortDesc: 'Some stories are told. Others are Darwin.',
-		longDesc:
-			'A placeholder memory for a future final gallery image, where Darwin becomes less of a character and more of a myth.'
+		shortDesc: 'I hope you understand...',
+		longDesc: `Though I spend my days in conversation.. Please remember me.. Take a good look around you.. Take a good look, you're bound to see.. That you and me...
+      My dear.. You have always been my inspiration.. Please, be good to me..`
 	}
 ];
