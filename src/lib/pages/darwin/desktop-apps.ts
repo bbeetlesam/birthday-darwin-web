@@ -16,9 +16,12 @@ export const desktopApps: DesktopApp[] = [
 		x: 5,
 		y: 90,
 		windowTitle: 'Who is Darwin?',
-		windowWidth: '400px',
-		windowHeight: '300px',
-		WindowContent: DarwinWhoWindow
+		windowWidth: '490px',
+		windowHeight: '270px',
+		WindowContent: DarwinWhoWindow,
+		windowStyle: {
+			contentBackgroundColor: '#d9ecff'
+		}
 	},
 	{
 		id: 'gallery',
