@@ -62,8 +62,11 @@ export const rsvpDesktopApp: DesktopApp = {
 	x: 5,
 	y: 260,
 	windowTitle: 'Prepare to Join!',
-	windowWidth: '400px',
-	windowHeight: '300px',
+	windowWidth: '420px',
+	windowHeight: '310px',
 	windowShowCloseButton: false,
-	WindowContent: RSVPWindow
+	WindowContent: RSVPWindow,
+	windowStyle: {
+		contentBackgroundColor: '#f5f5f5'
+	}
 };

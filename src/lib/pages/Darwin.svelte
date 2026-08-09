@@ -1,7 +1,16 @@
 <script lang="ts">
 	import Desktop from '$lib/components/DesktopShortcut.svelte';
 	import GalleryWindow from '$lib/pages/darwin/GalleryWindow.svelte';
+	import RSVPWindow from '$lib/pages/darwin/RSVPWindow.svelte';
+	import type { Scene } from '$lib/components/SceneManager.svelte';
 	import { desktopApps, rsvpDesktopApp } from '$lib/pages/darwin/desktop-apps';
+	import { onMount } from 'svelte';
+
+	type Props = {
+		onComplete?: (nextScene: Scene) => void;
+	};
+
+	let { onComplete }: Props = $props();
 
 	const galleryUnlockSequence = [
 		'normal-darwin',
@@ -11,7 +20,10 @@
 		'cutethink-darwin'
 	];
 
+	const guestsList = ['kamil', 'kamila', 'mila', 'samudra', 'sam'];
+
 	let openedGalleryEntryIds = $state<string[]>([]);
+	let forceOpenRSVP = $state(false); // debug bypass flag
 
 	const unlockedGalleryEntryIds = $derived(
 		galleryUnlockSequence.slice(
@@ -24,8 +36,14 @@
 		galleryUnlockSequence.every((entryId) => openedGalleryEntryIds.includes(entryId))
 	);
 
+	// include RSVP app if gallery sequence completed OR debug flag is present
 	const visibleDesktopApps = $derived(
-		hasCompletedGallerySequence ? [...desktopApps, rsvpDesktopApp] : desktopApps
+		hasCompletedGallerySequence || forceOpenRSVP
+			? [
+					...desktopApps,
+					forceOpenRSVP ? { ...rsvpDesktopApp, initiallyOpen: true } : rsvpDesktopApp
+				]
+			: desktopApps
 	);
 
 	function recordGalleryEntryOpen(entryId: string) {
@@ -33,6 +51,17 @@
 
 		openedGalleryEntryIds = [...openedGalleryEntryIds, entryId];
 	}
+
+	onMount(() => {
+		try {
+			const params = new URL(globalThis.location.href).searchParams;
+			if (params.get('rsvp') === '1' || params.get('rsvp') === 'true') {
+				forceOpenRSVP = true;
+			}
+		} catch {
+			// ignore
+		}
+	});
 </script>
 
 {#each visibleDesktopApps as app (app.id)}
@@ -56,6 +85,8 @@
 				unlockedEntryIds={unlockedGalleryEntryIds}
 				onEntryOpen={recordGalleryEntryOpen}
 			/>
+		{:else if app.id === 'rsvp'}
+			<RSVPWindow {guestsList} {onComplete} />
 		{:else}
 			<WindowContent />
 		{/if}
