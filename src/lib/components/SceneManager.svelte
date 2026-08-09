@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	const pages = ['intro', 'darwin'] as const;
+	const pages = ['intro', 'darwin', 'party'] as const;
 	export type Scene = (typeof pages)[number];
 </script>
 
@@ -10,6 +10,7 @@
 	// scenes
 	import Intro from '$lib/pages/Intro.svelte';
 	import WhosDarwin from '$lib/pages/Darwin.svelte';
+	import Party from '$lib/pages/Party.svelte';
 
 	type TransitionRequest = {
 		id: number;
@@ -45,7 +46,9 @@
 {#if scene === 'intro'}
 	<Intro onComplete={goToScene} />
 {:else if scene === 'darwin'}
-	<WhosDarwin />
+	<WhosDarwin onComplete={goToScene} />
+{:else if scene === 'party'}
+	<Party />
 {/if}
 
 <SceneTransition

@@ -3,12 +3,15 @@
 	import dollingDarwinImg from '$lib/assets/images/darwin-doll.png';
 
 	type RSVPPage = 'first' | 'name' | 'final';
+	const NEXT_SCENE = 'party';
+
 	type Props = {
 		guestsList?: string[];
 		onSubmit?: (name: string) => void;
+		onComplete?: (nextScene: typeof NEXT_SCENE) => void;
 	};
 
-	let { guestsList = [], onSubmit }: Props = $props();
+	let { guestsList = [], onSubmit, onComplete }: Props = $props();
 
 	let page = $state<RSVPPage>('first');
 	let guestName = $state('');
@@ -42,6 +45,10 @@
 			e.preventDefault();
 			submitName();
 		}
+	}
+
+	function goToParty() {
+		onComplete?.(NEXT_SCENE);
 	}
 </script>
 
@@ -86,10 +93,11 @@
 					<div class="space-y-1">
   					<p>It certainly seems that this party.. is</p>
   					<button
-       			  type="button"
-              class="w-fit cursor-pointer self-center rounded-lg border-2 bg-amber-100 px-2 py-0 font-bold hover:bg-amber-200"
+  						type="button"
+  						class="w-fit cursor-pointer self-center rounded-lg border-2 bg-amber-100 px-2 py-0 font-bold hover:bg-amber-200"
+  						onclick={goToParty}
   					>
-  					  YOUR PARTY!
+  						YOUR PARTY!
   					</button>
 					</div>
 				</div>
