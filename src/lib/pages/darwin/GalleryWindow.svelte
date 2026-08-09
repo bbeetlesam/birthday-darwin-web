@@ -5,19 +5,32 @@
 	type Props = {
 		unlockedEntryIds?: string[];
 		onEntryOpen?: (entryId: string) => void;
+		maxEntries?: number; // optional cap for displayed entries (Darwin scene uses 12)
 	};
 
-	let { unlockedEntryIds = galleryEntries.map((entry) => entry.id), onEntryOpen }: Props = $props();
+	let { unlockedEntryIds = galleryEntries.map((entry) => entry.id), onEntryOpen, maxEntries }: Props = $props();
 
 	const ITEMS_PER_PAGE = 6; // 2 rows x 3 columns
-	const TOTAL_PAGES = Math.ceil(galleryEntries.length / ITEMS_PER_PAGE);
-	const pageIndexes = Array.from({ length: TOTAL_PAGES }, (_, index) => index);
+
+	//if maxEntries is not provided, show all entries
+	const displayedEntries = $derived(
+		maxEntries != null ? galleryEntries.slice(0, Math.max(0, maxEntries)) : galleryEntries
+	);
+
+	const TOTAL_PAGES = $derived(
+		Math.max(1, Math.ceil(displayedEntries.length / ITEMS_PER_PAGE))
+	);
+	const pageIndexes = $derived(Array.from({ length: TOTAL_PAGES }, (_, index) => index));
+
+	$effect(() => {
+		if (currentPage > TOTAL_PAGES - 1) currentPage = Math.max(0, TOTAL_PAGES - 1);
+	});
 
 	let currentPage = $state(0);
 	let selectedEntry = $state<GalleryItem | null>(null);
 
 	const currentEntries = $derived(
-		galleryEntries.slice(
+		displayedEntries.slice(
 			currentPage * ITEMS_PER_PAGE,
 			currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
 		)

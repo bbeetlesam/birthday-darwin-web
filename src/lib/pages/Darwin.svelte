@@ -2,12 +2,11 @@
 	import Desktop from '$lib/components/DesktopShortcut.svelte';
 	import GalleryWindow from '$lib/pages/darwin/GalleryWindow.svelte';
 	import RSVPWindow from '$lib/pages/darwin/RSVPWindow.svelte';
-	import type { Scene } from '$lib/components/SceneManager.svelte';
 	import { desktopApps, rsvpDesktopApp } from '$lib/pages/darwin/desktop-apps';
 	import { onMount } from 'svelte';
 
 	type Props = {
-		onComplete?: (nextScene: Scene) => void;
+		onComplete?: (nextScene: 'party') => void;
 	};
 
 	let { onComplete }: Props = $props();
@@ -84,9 +83,10 @@
 			<GalleryWindow
 				unlockedEntryIds={unlockedGalleryEntryIds}
 				onEntryOpen={recordGalleryEntryOpen}
+				maxEntries={12}
 			/>
 		{:else if app.id === 'rsvp'}
-			<RSVPWindow {guestsList} {onComplete} />
+			<RSVPWindow {guestsList} onComplete={onComplete} />
 		{:else}
 			<WindowContent />
 		{/if}
