@@ -2,7 +2,7 @@ import type { DesktopApp } from '$lib/types';
 import darwinGalleryImg from '$lib/assets/images/darwin-curious.png';
 import darwinMusicImg from '$lib/assets/images/darwin-listening.png';
 import darwinWishImg from '$lib/assets/images/darwin-mesmerised.png';
-import GreetWindow from '$lib/pages/darwin/GreetWindow.svelte';
+import DevNotesWindow from '$lib/pages/party/DevNotes.svelte';
 import PlaylistWindow from '$lib/pages/party/Playlist.svelte';
 import GalleryWindow from '$lib/pages/darwin/GalleryWindow.svelte';
 import butterflyImg from '$lib/assets/images/butterfly.png';
@@ -22,7 +22,7 @@ export const desktopApps: DesktopApp[] = [
 			contentBackgroundColor: '#d9ecff',
 			contentPadding: '0rem'
 		},
-		WindowContent: GreetWindow
+		WindowContent: DevNotesWindow
 	},
 	{
 		id: 'music',
@@ -59,14 +59,14 @@ export const desktopApps: DesktopApp[] = [
 		title: 'notes',
 		x: 5,
 		y: 260,
-		windowTitle: 'Bienvenue!',
-		windowWidth: '420px',
-		windowHeight: '330px',
+		initiallyOpen: true,
+		windowTitle: 'Liner Notes',
+		windowWidth: '415px',
+		windowHeight: '320px',
 		windowStyle: {
-			contentBackgroundColor: '#d9ecff',
-			contentPadding: '0rem'
+			contentBackgroundColor: '#d9ecff'
 		},
-		WindowContent: GreetWindow
+		WindowContent: DevNotesWindow
 	}
 ];
 
