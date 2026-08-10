@@ -8,7 +8,11 @@
 		maxEntries?: number; // optional cap for displayed entries (Darwin scene uses 12)
 	};
 
-	let { unlockedEntryIds = galleryEntries.map((entry) => entry.id), onEntryOpen, maxEntries }: Props = $props();
+	let {
+		unlockedEntryIds = galleryEntries.map((entry) => entry.id),
+		onEntryOpen,
+		maxEntries
+	}: Props = $props();
 
 	const ITEMS_PER_PAGE = 6; // 2 rows x 3 columns
 
@@ -17,9 +21,7 @@
 		maxEntries != null ? galleryEntries.slice(0, Math.max(0, maxEntries)) : galleryEntries
 	);
 
-	const TOTAL_PAGES = $derived(
-		Math.max(1, Math.ceil(displayedEntries.length / ITEMS_PER_PAGE))
-	);
+	const TOTAL_PAGES = $derived(Math.max(1, Math.ceil(displayedEntries.length / ITEMS_PER_PAGE)));
 	const pageIndexes = $derived(Array.from({ length: TOTAL_PAGES }, (_, index) => index));
 
 	$effect(() => {

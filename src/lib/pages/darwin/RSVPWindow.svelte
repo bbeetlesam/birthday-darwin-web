@@ -61,8 +61,7 @@
 				<div class="flex flex-col gap-3">
 					<h2 class="text-2xl font-extrabold text-[#2f2f2f]">Funs! Prepare!</h2>
 					<p>
-						<span class="font-extrabold">She</span> is on her birthday today! Let's celebrate with
-						Darwin!
+						<span class="font-extrabold">She</span> is on her birthday today! Let's celebrate with Darwin!
 					</p>
 				</div>
 			</div>
@@ -91,14 +90,14 @@
 				<div class="space-y-5">
 					<h2 class="text-3xl font-extrabold text-[#2f2f2f]">WAIT..</h2>
 					<div class="space-y-1">
-  					<p>It certainly seems that this party.. is</p>
-  					<button
-  						type="button"
-  						class="w-fit cursor-pointer self-center rounded-lg border-2 bg-amber-100 px-2 py-0 font-bold hover:bg-amber-200"
-  						onclick={goToParty}
-  					>
-  						YOUR PARTY!
-  					</button>
+						<p>It certainly seems that this party.. is</p>
+						<button
+							type="button"
+							class="w-fit cursor-pointer self-center rounded-lg border-2 bg-amber-100 px-2 py-0 font-bold hover:bg-amber-200"
+							onclick={goToParty}
+						>
+							YOUR PARTY!
+						</button>
 					</div>
 				</div>
 			</div>

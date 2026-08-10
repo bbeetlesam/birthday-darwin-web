@@ -86,7 +86,7 @@
 				maxEntries={12}
 			/>
 		{:else if app.id === 'rsvp'}
-			<RSVPWindow {guestsList} onComplete={onComplete} />
+			<RSVPWindow {guestsList} {onComplete} />
 		{:else}
 			<WindowContent />
 		{/if}
