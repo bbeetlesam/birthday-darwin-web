@@ -92,7 +92,7 @@
 
 	<div class="flex justify-between border-t-2 border-[#2f2f2f]/20 text-xs">
 		<p>Sincerely, Sam</p>
-		<p>Really likes you.</p>
+		<p>Jolly good.</p>
 	</div>
 </div>
 
