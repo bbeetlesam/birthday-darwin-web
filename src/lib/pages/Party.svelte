@@ -54,7 +54,7 @@
 		initiallyOpen={app.initiallyOpen}
 	>
 		{#if app.id === 'greet'}
-			<WishWindow onAllPagesViewed={unlockWishCloseButton} />
+			<WishWindow onAllPagesViewed={unlockWishCloseButton} isUnlocked={wishCanClose} />
 		{:else}
 			<WindowContent />
 		{/if}

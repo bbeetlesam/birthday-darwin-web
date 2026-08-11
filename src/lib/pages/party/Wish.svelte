@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
 	import WishPage1 from '$lib/pages/party/wish-pages/WishPage1.svelte';
+	import WishPage2 from '$lib/pages/party/wish-pages/WishPage2.svelte';
+	// import WishPage3 from '$lib/pages/party/wish-pages/WishPage3.svelte';	
 
 	type WishPage = {
 		id: number;
@@ -10,6 +12,7 @@
 
 	type Props = {
 		onAllPagesViewed?: () => void;
+		isUnlocked?: boolean;
 	};
 
 	const pages: WishPage[] = [
@@ -18,10 +21,10 @@
 			PageContent: WishPage1,
 			isFullBleed: true
 		},
-		// {
-		// 	id: 2,
-		// 	PageContent: WishPage2
-		// },
+		{
+			id: 2,
+			PageContent: WishPage2
+		},
 		// {
 		// 	id: 3,
 		// 	PageContent: WishPage3
@@ -31,10 +34,10 @@
 	const totalPages = pages.length;
 	const pageIndexes = Array.from({ length: totalPages }, (_, index) => index);
 
-	let { onAllPagesViewed }: Props = $props();
+	let { onAllPagesViewed, isUnlocked = false }: Props = $props();
 	let currentPage = $state(0);
 	let visitedPageIds = $state<number[]>([pages[0].id]);
-	let hasUnlockedCloseButton = $state(false);
+	let hasReportedCompletion = $state(false);
 
 	const currentWishPage = $derived(pages[currentPage]);
 	const CurrentPageContent = $derived(currentWishPage.PageContent);
@@ -60,9 +63,9 @@
 	});
 
 	$effect(() => {
-		if (hasUnlockedCloseButton || visitedPageIds.length !== totalPages) return;
+		if (isUnlocked || hasReportedCompletion || visitedPageIds.length !== totalPages) return;
 
-		hasUnlockedCloseButton = true;
+		hasReportedCompletion = true;
 		onAllPagesViewed?.();
 	});
 </script>
@@ -75,9 +78,9 @@
 	</div>
 
 	<div
-		class={`flex shrink-0 items-center gap-4 ${hasUnlockedCloseButton ? 'justify-between' : 'justify-center'}`}
+		class={`flex shrink-0 items-center gap-4 ${isUnlocked ? 'justify-between' : 'justify-center'}`}
 	>
-		{#if hasUnlockedCloseButton}
+		{#if isUnlocked}
 			<button
 				type="button"
 				class="cursor-pointer rounded-lg border-2 bg-amber-100 px-3 py-1 text-sm font-bold hover:bg-amber-200 disabled:cursor-default disabled:opacity-45"
