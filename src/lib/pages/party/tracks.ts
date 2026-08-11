@@ -11,211 +11,209 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/1ABegtCPBMMJaMpfDyATjE',
 		description:
-			'A wonderfully chaotic slice of late-period Beatles pop, built around a stomping riff and an irresistibly celebratory groove.'
+			'My go-to song when it comes about birthday. Raw voice, raw guitars, all raw. I think this is the sound we should have when celebrating it.'
 	},
 	{
 		title: 'I Will',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/09x9v1o51dbqi5H0u7UGfp',
 		description:
-			'A tiny, tender McCartney ballad that somehow manages to sound intimate without becoming unbearably sentimental.'
+			'A tiny and simple ballad about love. Not much to it, but who knows how long I will love you?'
 	},
 	{
 		title: 'Something',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/0pNeVovbiZHkulpGeOx1Gj',
 		description:
-			"George Harrison's elegant declaration of affection, carried by one of the most graceful melodies in the Beatles catalogue."
+			"Our eyes see seomthing in each person. And there's different things we see in different people. That's what makes someone special in our eyes."
 	},
 	{
 		title: 'Her Majesty',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/6UCFZ9ZOFRxK8oak7MdPZu',
 		description:
-			'A ridiculously short acoustic fragment that became the perfect little afterthought to Abbey Road.'
+			"I mean, it's a beautiful song. Under a minute, and it's as beautiful as her majesty."
 	},
 	{
 		title: 'Martha My Dear',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/1swmf4hFMJYRNA8Rq9PVaW',
-		description:
-			'Playful, orchestral and slightly eccentric, with McCartney turning a simple piano tune into a miniature pop arrangement.'
+		description: 'Kamil, my dear. You have always been my inspiration. Please remember me.'
 	},
 	{
 		title: 'Do You Want To Know A Secret',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/7Aobt67JnaF7qN8jCCKvHq',
 		description:
-			'An early Beatles love song with a wonderfully innocent charm and a melody that feels almost impossibly uncomplicated.'
+			"Everyone loves secrets! Do you want to know a secret? Just listen to this track, you won't regret it."
 	},
 	{
 		title: 'Michelle',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/5By7Pzgl6TMuVJG168VWzS',
 		description:
-			'A sophisticated acoustic ballad dressed in gentle French-flavoured phrasing, proving the Beatles could make restraint sound luxurious.'
+			"What if love doesn't know about language barrier at all? They will say the only words they know that they'll understand."
 	},
 	{
 		title: 'A Day In The Life',
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/3ZFBeIyP41HhnALjxWy1pR',
 		description:
-			'A surreal collision of Lennon and McCartney that grows from quiet observation into one of the great orchestral climaxes of psychedelic rock.'
+			'I have my own life, and so do you. Maybe we can share our day in the life sometime?'
 	},
 	{
 		title: 'Wonderful Tonight',
 		artist: 'Eric Clapton',
 		spotifyUrl: 'https://open.spotify.com/track/6a79Oo6RXOx8AuD9eOlCTJ',
-		description: 'A slow, warm love song whose simplicity is precisely what makes it work.'
+		description:
+			"Tonight would be wonderful. Today would be, tomorrow would be, and yesterday would've been wonderful, if it's with you."
 	},
 	{
 		title: 'Canon in D',
 		artist: 'Johann Pachelbel',
 		spotifyUrl: 'https://open.spotify.com/track/0NAZk4tev38aggzECb4Y93',
 		description:
-			'A serene Baroque progression that has somehow survived centuries, weddings and an astonishing amount of overuse.'
+			'A little peek of Baroque era. I love this piece of peace! I can play you the piano if you ask :3'
 	},
 	{
 		title: 'Lady of the Dancing Water',
 		artist: 'King Crimson',
 		spotifyUrl: 'https://open.spotify.com/track/0pKlIB10GmZCmXA1g5EhV5',
 		description:
-			"A delicate pastoral moment from King Crimson, offering a surprisingly gentle contrast to the band's heavier and stranger material."
+			"Suns in your eyes, grass in your hair, warm in your hands, and melody in your voice. You are the lady of the dancing water (or at least that's what the song said)."
 	},
 	{
 		title: 'Let It Grow',
 		artist: 'Renaissance',
 		spotifyUrl: 'https://open.spotify.com/track/3QsGB7HsfcxVHWNWNYePTj',
 		description:
-			"Dreamy progressive folk-rock with Renaissance's characteristic blend of intricate musicianship and ethereal atmosphere."
+			'Everything starts with small things! So while it is evolving, why not try to let it grow? I mean my love, to who? You know who I mean.'
 	},
 	{
 		title: 'A Certain Kind',
 		artist: 'Soft Machine',
 		spotifyUrl: 'https://open.spotify.com/track/0o5LHjVdI1MWKy59vwyfmA',
 		description:
-			"A compact glimpse into Soft Machine's wonderfully odd intersection of jazz, psychedelia and British underground rock."
+			'I love Mellotron, Moogs, and synths btw. And this track visualise the certainty of your kindness in a psychedelic sense. Hippie..'
 	},
 	{
 		title: 'The Drum',
 		artist: 'Slapp Happy',
 		spotifyUrl: 'https://open.spotify.com/track/0xzxRsPclx8C7ROu9RUvTm',
 		description:
-			'A strange little piece from one of the more delightfully unconventional corners of the Canterbury-adjacent world.'
+			"That's the drum! Ma jolie petite fleur, listen to the sound of the drum. We're nothing yet but water! Anyway, my sweet patootie, there's a letter for you (you'll find it on the shelf)!"
 	},
 	{
 		title: 'Prostitute Poem',
 		artist: 'Gong',
 		spotifyUrl: 'https://open.spotify.com/track/27Aggcl7fe7O33NAnnfgz3',
 		description:
-			'Gong doing what Gong does best: psychedelic whimsy, surreal imagery and music that seems to have wandered in from another dimension.'
+			'Abandon the title. I always imagine dancing with someone I love in front of the flashy and quiet scene of Eiffel Tower each time listening to this track.'
 	},
 	{
 		title: 'Peaches En Regalia',
 		artist: 'Frank Zappa',
 		spotifyUrl: 'https://open.spotify.com/track/5uDu2qOoDou7cFXsipAo8l',
 		description:
-			'Bright, absurdly intricate instrumental rock that somehow makes virtuosic composition feel playful rather than self-important.'
+			"Peaches dressed up in fine attire! You're no peaches, but surely dressed up in exquisite fashion *wink* !"
 	},
 	{
 		title: 'Lady Fantasy',
 		artist: 'Camel',
 		spotifyUrl: 'https://open.spotify.com/track/35e4fhZkQuQo77kOro2QYF',
 		description:
-			'A quintessential Camel journey through spacious melodies, soaring guitar lines and patient progressive-rock development.'
+			"You've listened to this before. My later impression is, I think I am no longer feel relate to this track, my lady fantasy."
 	},
 	{
 		title: 'Vienna',
 		artist: 'Billy Joel',
 		spotifyUrl: 'https://open.spotify.com/track/4U45aEWtQhrm8A5mxPaFZ7',
 		description:
-			'A reflective piano song about slowing down and accepting that life does not need to be conquered all at once.'
+			"Perfect to be played at birthdays, or even every day. Ambitions are decent, but don't forget that you have a once-life to be enjoyed with."
 	},
 	{
 		title: 'Walk Of Life',
 		artist: 'Dire Straits',
 		spotifyUrl: 'https://open.spotify.com/track/5Hk4Mpex0s2ndUpDQ5v2rU',
 		description:
-			"A cheerful detour from Dire Straits' usual sophistication, driven by a bright organ riff and an almost suspiciously infectious rhythm."
+			"And after all the violence and double-talk, there's just a song in all the trouble and the strife.. You do the walk of life, pretty straighforward!"
 	},
 	{
 		title: 'Hush',
 		artist: 'Deep Purple',
 		spotifyUrl: 'https://open.spotify.com/track/0S3DtjjlGRSpM6MuTt8nfW',
 		description:
-			'A swaggering early Deep Purple performance where psychedelic pop meets the beginnings of their heavier sound.'
+			"One hard rock slipped in here. Listen to the rock, does it rings a bell? My desire to meet you is growing stronger every tick, that I thought you call my name in my sleep! That's weird!"
 	},
 	{
 		title: 'Make A Wish (Birthday Song)',
 		artist: 'NCT U',
 		spotifyUrl: 'https://open.spotify.com/track/2ennf9jcOPc4twL2iI5Lmn',
 		description:
-			'A glossy modern pop track with a playful birthday theme and enough rhythmic energy to make the occasion considerably less awkward.'
+			"The only K-Pop track you'll ever need here! OOT, I fell in love with Taeyong after watching his dance of this track. Anyway, make a wish, it's gonna be alright!"
 	},
 	{
 		title: 'Dedicated To The One I Love',
 		artist: 'The Mamas & The Papas',
 		spotifyUrl: 'https://open.spotify.com/track/1mFrjW8e8fuAOowlU3Q3Dr',
 		description:
-			'A gentle harmony-driven pop song whose layered vocals give the simple sentiment an almost dreamlike quality.'
+			"If you read the title, yes that's what the title's about. Do I need to elaborate more about my feelings?"
 	},
 	{
 		title: 'Tell All the People',
 		artist: 'The Doors',
 		spotifyUrl: 'https://open.spotify.com/track/0g1NRq4KmbEYgzaPF7G6CG',
 		description:
-			'A brass-heavy Doors track that leans into theatrical rock rather than their more familiar hypnotic psychedelic sound.'
+			"Tell all the people that you see that I adore you! Can't you see the wonder at your feet? Your life's complete!"
 	},
 	{
 		title: 'Dancing Queen',
 		artist: 'ABBA',
 		spotifyUrl: 'https://open.spotify.com/track/01iyCAUm8EvOFqVWYJ3dVX',
 		description:
-			'Immaculately crafted disco-pop that remains almost offensively effective at making people dance.'
+			"You're the Dancing Queen now, the difference is you're actually 20, not 18! (Nevermind)"
 	},
 	{
 		title: 'Catch the Wind',
 		artist: 'Donovan',
 		spotifyUrl: 'https://open.spotify.com/track/6v9fB1YkeaEKkSXGFMfobl',
 		description:
-			'A wistful piece of British folk-pop with a fragile vocal delivery and the atmosphere of a quiet afternoon in the late sixties.'
+			'No more than an emotionally weak person I am, but I may as well try and catch the wind, with you.'
 	},
 	{
 		title: 'Brown Eyed Girl',
 		artist: 'Van Morrison',
 		spotifyUrl: 'https://open.spotify.com/track/3yrSvpt2l1xhsV9Em88Pul',
 		description:
-			'An effortlessly sunny piece of soul-inflected pop-rock that has become almost inseparable from the idea of a summer song.'
+			"Imagine we're walking and sitting and laying beneath the warm shine from the sun, above the tickling green grass, and between the windy breeze. Just in the right time."
 	},
 	{
 		title: 'Maybe I’m Amazed',
 		artist: 'Paul McCartney',
-		spotifyUrl: 'https://open.spotify.com/search/Maybe%20I%E2%80%99m%20Amazed%20Paul%20McCartney',
+		spotifyUrl: 'https://open.spotify.com/track/1Qa0Y05al633fG8f9Peytc',
 		description:
-			"An intensely sincere love song built around McCartney's piano, vocals and the slightly overwhelming feeling of being genuinely grateful for someone."
+			"I always gets amazed by everything my whole life. And now I'm amazed by everything you do. Maybe I'm just amazed."
 	},
 	{
 		title: 'All Things Must Pass',
 		artist: 'George Harrison',
 		spotifyUrl: 'https://open.spotify.com/track/16OwZQuzMqnwn3FZsCBZly',
 		description:
-			'Harrison turns impermanence into something comforting, wrapping a philosophical lyric in warm, expansive songwriting.'
+			"Happy birthday! But don't forget that life still goes on. This too shall pass, as every thing will eventually come to an end. But seize the day, anyway!"
 	},
 	{
 		title: 'Ada titik-titik di ujung doa',
 		artist: 'Sal Priadi',
-		spotifyUrl:
-			'https://open.spotify.com/search/Ada%20titik-titik%20di%20ujung%20doa%20Sal%20Priadi',
+		spotifyUrl: 'https://open.spotify.com/track/1E7zLPDdqo0OvzVmGj5aoV',
 		description:
-			'A contemporary Indonesian song with an intimate, poetic quality that brings the playlist gently back into the present.'
+			'No description needed. The title is literally my prayer (not what the song means though).'
 	},
 	{
 		title: 'Think Of Me With Kindness',
 		artist: 'Gentle Giant',
-		spotifyUrl:
-			'https://open.spotify.com/search/Think%20Of%20Me%20With%20Kindness%20Gentle%20Giant',
+		spotifyUrl: 'https://open.spotify.com/track/0c4VnGknwup4UJzVXrmeXI',
 		description:
-			'A beautifully restrained Gentle Giant piece, trading some of their usual complexity for melancholy warmth and delicate vocal harmonies.'
+			"I'd like to end this playlist with a track that reminds me of the gentle giant who brought me to you. Thank you for thinking of me with kindness."
 	}
 ];
 
