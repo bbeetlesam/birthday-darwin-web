@@ -2,6 +2,7 @@ import type { DesktopApp } from '$lib/types';
 import darwinGalleryImg from '$lib/assets/images/darwin-curious.png';
 import darwinMusicImg from '$lib/assets/images/darwin-listening.png';
 import darwinWishImg from '$lib/assets/images/darwin-mesmerised.png';
+import WishWindow from '$lib/pages/party/Wish.svelte';
 import DevNotesWindow from '$lib/pages/party/DevNotes.svelte';
 import PlaylistWindow from '$lib/pages/party/Playlist.svelte';
 import GalleryWindow from '$lib/pages/darwin/GalleryWindow.svelte';
@@ -16,13 +17,13 @@ export const desktopApps: DesktopApp[] = [
 		y: 5,
 		initiallyOpen: true,
 		windowTitle: 'Make A Wish!',
-		windowWidth: '420px',
-		windowHeight: '330px',
+		windowWidth: '600px',
+		windowHeight: '475px',
 		windowStyle: {
 			contentBackgroundColor: '#d9ecff',
 			contentPadding: '0rem'
 		},
-		WindowContent: DevNotesWindow
+		WindowContent: WishWindow
 	},
 	{
 		id: 'music',
@@ -59,7 +60,7 @@ export const desktopApps: DesktopApp[] = [
 		title: 'notes',
 		x: 5,
 		y: 260,
-		initiallyOpen: true,
+		// initiallyOpen: true,
 		windowTitle: 'Liner Notes',
 		windowWidth: '415px',
 		windowHeight: '320px',

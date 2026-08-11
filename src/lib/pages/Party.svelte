@@ -3,6 +3,7 @@
 	import Desktop from '$lib/components/DesktopShortcut.svelte';
 	import kuberiImg from '$lib/assets/favicon.svg';
 
+	import WishWindow from '$lib/pages/party/Wish.svelte';
 	import { desktopApps } from '$lib/pages/party/desktop-apps';
 
 	const clockFormatter = new Intl.DateTimeFormat([], {
@@ -12,6 +13,17 @@
 	});
 
 	let currentTime = $state(clockFormatter.format(new Date()));
+	let wishCanClose = $state(false);
+
+	const visibleDesktopApps = $derived(
+		desktopApps.map((app) =>
+			app.id === 'greet' ? { ...app, windowShowCloseButton: wishCanClose } : app
+		)
+	);
+
+	function unlockWishCloseButton() {
+		wishCanClose = true;
+	}
 
 	onMount(() => {
 		const tick = () => {
@@ -25,7 +37,7 @@
 	});
 </script>
 
-{#each desktopApps as app (app.id)}
+{#each visibleDesktopApps as app (app.id)}
 	{@const WindowContent = app.WindowContent}
 
 	<Desktop
@@ -41,17 +53,11 @@
 		windowShowCloseButton={app.windowShowCloseButton}
 		initiallyOpen={app.initiallyOpen}
 	>
-		<!-- {#if app.id === 'gallery'}
-			<GalleryWindow
-				unlockedEntryIds={unlockedGalleryEntryIds}
-				onEntryOpen={recordGalleryEntryOpen}
-			/>
-		{:else if app.id === 'rsvp'}
-			<RSVPWindow {guestsList} {onComplete} />
+		{#if app.id === 'greet'}
+			<WishWindow onAllPagesViewed={unlockWishCloseButton} />
 		{:else}
 			<WindowContent />
-		{/if} -->
-		<WindowContent />
+		{/if}
 	</Desktop>
 {/each}
 
