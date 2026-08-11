@@ -34,14 +34,14 @@
 	};
 
 	let windows = $state<WindowConfig[]>([]);
+	let smiledWindowIds = $state<number[]>([]);
 	let hasCompleted = $state(false);
+	let hasGeneratedWindows = false;
 
-	const allWindowsSmiled = $derived(
-		windows.length === WINDOW_COUNT && windows.every((windowConfig) => windowConfig.smiled)
-	);
+	const allWindowsSmiled = $derived(smiledWindowIds.length === WINDOW_COUNT);
 
 	$effect(() => {
-		if (windows.length > 0) return;
+		if (hasGeneratedWindows) return;
 
 		windows = Array.from({ length: WINDOW_COUNT }, (_, index) => ({
 			id: index,
@@ -50,6 +50,7 @@
 			initialY: Math.random() * Math.max(window.innerHeight - WINDOW_SIZE, 0),
 			smiled: false
 		}));
+		hasGeneratedWindows = true;
 	});
 
 	function completeIntro() {
@@ -63,6 +64,14 @@
 		windows = windows.map((windowConfig) =>
 			windowConfig.id === id ? { ...windowConfig, smiled: true } : windowConfig
 		);
+
+		if (!smiledWindowIds.includes(id)) {
+			smiledWindowIds = [...smiledWindowIds, id];
+		}
+	}
+
+	function closeWindow(id: number) {
+		windows = windows.filter((windowConfig) => windowConfig.id !== id);
 	}
 </script>
 
@@ -90,6 +99,8 @@
 		width={`${WINDOW_SIZE}px`}
 		height={`${WINDOW_SIZE}px`}
 		style={windowStyle}
+		showCloseButton={windowConfig.smiled}
+		onClose={() => closeWindow(windowConfig.id)}
 	>
 		<div class="relative flex h-full w-full items-center justify-center">
 			<img
