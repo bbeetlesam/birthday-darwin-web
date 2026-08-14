@@ -2,7 +2,7 @@
 	import type { Component } from 'svelte';
 	import WishPage1 from '$lib/pages/party/wish-pages/WishPage1.svelte';
 	import WishPage2 from '$lib/pages/party/wish-pages/WishPage2.svelte';
-	// import WishPage3 from '$lib/pages/party/wish-pages/WishPage3.svelte';	
+	// import WishPage3 from '$lib/pages/party/wish-pages/WishPage3.svelte';
 
 	type WishPage = {
 		id: number;
@@ -23,7 +23,8 @@
 		},
 		{
 			id: 2,
-			PageContent: WishPage2
+			PageContent: WishPage2,
+			isFullBleed: true
 		},
 		// {
 		// 	id: 3,
@@ -71,9 +72,7 @@
 </script>
 
 <div class="flex h-full min-h-0 flex-col gap-4 p-4">
-	<div
-		class={`min-h-0 flex-1 overflow-auto bg-white/80 ${currentPageIsFullBleed ? '-mx-4 -mt-4' : 'rounded-lg border-2 border-[#2f2f2f] p-4'}`}
-	>
+	<div class={`min-h-0 flex-1 overflow-auto ${currentPageIsFullBleed ? '-mx-4 -mt-4' : 'pb-4'}`}>
 		<CurrentPageContent />
 	</div>
 
