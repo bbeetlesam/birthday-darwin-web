@@ -2,7 +2,7 @@
 	import type { Component } from 'svelte';
 	import WishPage1 from '$lib/pages/party/wish-pages/WishPage1.svelte';
 	import WishPage2 from '$lib/pages/party/wish-pages/WishPage2.svelte';
-	// import WishPage3 from '$lib/pages/party/wish-pages/WishPage3.svelte';
+	import WishPage3 from '$lib/pages/party/wish-pages/WishPage3.svelte';
 
 	type WishPage = {
 		id: number;
@@ -26,10 +26,10 @@
 			PageContent: WishPage2,
 			isFullBleed: true
 		},
-		// {
-		// 	id: 3,
-		// 	PageContent: WishPage3
-		// }
+		{
+			id: 3,
+			PageContent: WishPage3
+		}
 	];
 
 	const totalPages = pages.length;

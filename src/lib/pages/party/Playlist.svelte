@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { cubicOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
-	import { tracksList, tracksPlaylistUrl } from '$lib/pages/party/tracks';
+	import { tracksList } from '$lib/pages/party/tracks';
 	import partyDarwinImg from '$lib/assets/images/darwin-hat.png';
-	import spotifyIcon from '$lib/assets/images/spotify-icon.svg';
 
 	let openDescriptions = $state<Record<number, boolean>>({});
 
@@ -17,23 +16,14 @@
 
 <div class="flex h-full flex-col gap-3 pb-2">
 	<!-- Header -->
-	<div class="flex items-center justify-between gap-3 px-0 pt-0">
-		<div class="flex items-center gap-3">
+	<div class="flex items-center justify-between">
+		<div class="flex items-center">
 			<img src={partyDarwinImg} alt="Darwin listening" class="w-14" />
 			<div class="flex flex-col">
 				<p class="text-xs">Special Playlist</p>
 				<h2 class="text-xl font-bold text-[#2f2f2f]">birth of days</h2>
 			</div>
 		</div>
-		<a
-			href={tracksPlaylistUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="rounded-md border-2 border-[#2f2f2f] bg-white px-1 py-1 transition hover:bg-[#e7f6ea]"
-			aria-label="Open playlist on Spotify"
-		>
-			<img src={spotifyIcon} alt="" aria-hidden="true" class="h-6 w-6" />
-		</a>
 	</div>
 
 	<!-- Scrollable Tracklist -->
