@@ -6,13 +6,13 @@
 </script>
 
 <div
-	class="relative flex h-full min-h-0 items-center justify-center overflow-hidden bg-[#d9ecff] p-4 text-center"
+	class="relative flex h-full min-h-0 items-center justify-center overflow-hidden p-4 text-center"
 >
 	<img
 		src={rainbowImg}
 		alt=""
 		aria-hidden="true"
-		class="object-fill pointer-events-none absolute top-10 h-[95%] w-full"
+		class="pointer-events-none absolute top-10 h-[95%] w-full object-fill"
 	/>
 
 	<h2 class="absolute bottom-68 left-12 z-10 text-4xl font-extrabold text-[#2f2f2f]">Happiest</h2>
