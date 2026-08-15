@@ -19,7 +19,7 @@
 		'cutethink-darwin'
 	];
 
-	const guestsList = ['kamil', 'kamila', 'mila', 'samudra', 'sam'];
+	const guestsList = ['kamil', 'kamila', 'mila', 'miler'];
 
 	let openedGalleryEntryIds = $state<string[]>([]);
 	let forceOpenRSVP = $state(false); // debug bypass flag
