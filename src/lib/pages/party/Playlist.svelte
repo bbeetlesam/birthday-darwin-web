@@ -14,34 +14,37 @@
 	}
 </script>
 
-<div class="flex h-full flex-col gap-3 pb-2">
+<div class="flex h-full flex-col gap-2">
 	<!-- Header -->
-	<div class="flex items-center justify-between">
-		<div class="flex items-center">
+	<div class="flex items-center justify-between pr-1">
+		<div class="flex items-center gap-2">
 			<img src={partyDarwinImg} alt="Darwin listening" class="w-14" />
-			<div class="flex flex-col">
+			<div class="flex flex-col justify-end">
 				<p class="text-xs">Special Playlist</p>
 				<h2 class="text-xl font-bold text-[#2f2f2f]">birth of days</h2>
 			</div>
 		</div>
+
+		<div class="flex flex-col items-end text-xs">
+			<p class="">30 tracks</p>
+			<p>1 hr 55 min</p>
+		</div>
 	</div>
 
 	<!-- Scrollable Tracklist -->
-	<div
-		class="flex-1 overflow-y-auto border-t-2 border-[#2f2f2f]/20 px-0 pr-2"
-		style="scrollbar-width: auto; scrollbar-color: #c4d6f0 transparent;"
-	>
-		<div class="space-y-2">
+	<div class="scrollbar flex-1 overflow-y-auto border-y-2 border-[#2f2f2f] pr-3">
+		<div class="flex flex-col divide-y-2 divide-[#2f2f2f]">
 			{#each tracksList as track, index (index)}
 				<div
-					class="overflow-hidden rounded-md border-2 bg-[#d9ecff] transition-all duration-200 hover:bg-[#d9f9fd]"
+					class="overflow-hidden rounded-none -outline-offset-1 outline-[#2f2f2f] transition-colors duration-200 hover:bg-[#d9ecff] hover:outline-2"
 				>
-					<div class="flex items-start justify-between gap-2 px-3 py-2">
+					<div class="flex items-center justify-between gap-2 px-3 py-2">
+						<p class="w-6 pr-2 text-right font-extrabold">{index}</p>
 						<a
 							href={track.spotifyUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="group min-w-0 flex-2"
+							class="group min-w-0 flex-2 cursor-pointer"
 						>
 							<div class="flex items-baseline gap-2">
 								<h3
@@ -70,7 +73,7 @@
 					{#if openDescriptions[index]}
 						<div
 							transition:slide={{ duration: 220, easing: cubicOut }}
-							class="border-t-2 border-[#2f2f2f] bg-[#e8d7ff] px-3 py-1 text-sm leading-relaxed text-[#2f2f2f]"
+							class="border-x-2 border-t-2 border-[#2f2f2f] bg-[#e8d7ff] px-3 py-1 text-sm leading-relaxed text-[#2f2f2f]"
 						>
 							{track.description ?? 'Selected for you.'}
 						</div>
@@ -80,16 +83,22 @@
 		</div>
 	</div>
 
-	<div class="flex justify-between border-t-2 border-[#2f2f2f]/20 text-xs">
+	<div class="flex justify-between text-xs">
 		<p>Sincerely, Sam</p>
 		<p>Jolly good.</p>
 	</div>
 </div>
 
 <style>
-	/* Custom scrollbar styling */
+	/* firefox */
+	.scrollbar {
+		scrollbar-width: auto;
+		scrollbar-color: #d4d6f0 transparent;
+	}
+
+	/* chrome, edge, safari */
 	::-webkit-scrollbar {
-		width: 8px;
+		width: 10px;
 	}
 
 	::-webkit-scrollbar-track {
