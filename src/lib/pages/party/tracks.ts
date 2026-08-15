@@ -25,7 +25,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'The Beatles',
 		spotifyUrl: 'https://open.spotify.com/track/0pNeVovbiZHkulpGeOx1Gj',
 		description:
-			"Our eyes see seomthing in each person. And there's different things we see in different people. That's what makes someone special in our eyes."
+			"Our eyes see something in each person. And there's different things we see in different people. That's what makes someone special in our eyes."
 	},
 	{
 		title: 'Her Majesty',
