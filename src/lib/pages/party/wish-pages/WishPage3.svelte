@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { tracksPlaylistUrl } from '$lib/pages/party/tracks';
-	import placeholderImg from '$lib/assets/images/gumball-mesmerised.png';
+	import vinylImg from '$lib/assets/images/vinyl.png';
+	import tsImg from '$lib/assets/images/computer-head.png';
+	import cutieImg from '$lib/assets/images/cutie.png';
 
 	const SPOTIFY_PLAYLIST_URL = tracksPlaylistUrl;
-	const ASSETS_DRIVE_URL =
-		'https://drive.google.com/drive/folders/1ExzYeaP-ojIU_QK_3HCzS5zKP_G51sPD';
+	const ASSETS_DRIVE_URL = 'https://drive.google.com/drive/folders/1ExzYeaP-ojIU_QK_3HCzS5zKP_G51sPD';
 	const GITHUB_URL = 'https://github.com/bbeetlesam/birthday-darwin-web';
 
 	type giftEntry = {
@@ -18,19 +19,19 @@
 		{
 			name: "Robert's Simple Album",
 			description: 'A collection of special tracks he hopefully find interesting for you.',
-			image: placeholderImg,
+			image: vinylImg,
 			link: SPOTIFY_PLAYLIST_URL
 		},
 		{
 			name: "Immanuella's Doodles",
-			description: 'She loves doodles, and here are her special creations to her bestie! :3',
-			image: placeholderImg,
+			description: 'She loves doodles, and here are her special creations for her bestie! :3',
+			image: cutieImg,
 			link: ASSETS_DRIVE_URL
 		},
 		{
 			name: "Samudra's Messy Codes",
 			description: 'A nerd like him can only shares his <b>valuable source codes</b>..',
-			image: placeholderImg,
+			image: tsImg,
 			link: GITHUB_URL
 		}
 	];
@@ -42,7 +43,7 @@
 		<p class="text-base">Not many, but hope you love them!</p>
 	</div>
 
-	<div class="flex flex-col gap-2">
+	<div class="flex flex-col gap-2 w-[95%]">
 		{#each giftEntries as giftEntry (giftEntry)}
 			<a
 				href={giftEntry.link}
