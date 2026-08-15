@@ -32,11 +32,11 @@
 	</div>
 
 	<!-- Scrollable Tracklist -->
-	<div class="scrollbar flex-1 overflow-y-auto border-y-2 border-[#2f2f2f] pr-3">
+	<div class="scrollbar flex-1 overflow-y-auto border-y-2 border-[#2f2f2f] border-r-2 pr-3">
 		<div class="flex flex-col divide-y-2 divide-[#2f2f2f]">
 			{#each tracksList as track, index (index)}
 				<div
-					class="overflow-hidden rounded-none -outline-offset-1 outline-[#2f2f2f] transition-colors duration-200 hover:bg-[#d9ecff] hover:outline-2"
+					class="overflow-hidden rounded-none border-x-2 -outline-offset-5 bg-[#d9ecff] outline-[#2f2f21] transition-colors duration-200 hover:bg-[#b9d9ff] hover:outline-0"
 				>
 					<div class="flex items-center justify-between gap-2 px-3 py-2">
 						<p class="w-6 pr-2 text-right font-extrabold">{index}</p>
@@ -73,7 +73,7 @@
 					{#if openDescriptions[index]}
 						<div
 							transition:slide={{ duration: 220, easing: cubicOut }}
-							class="border-x-2 border-t-2 border-[#2f2f2f] bg-[#e8d7ff] px-3 py-1 text-sm leading-relaxed text-[#2f2f2f]"
+							class="border-t-2 border-[#2f2f2f] bg-[#e8d7ff] px-3 py-1 text-sm leading-relaxed text-[#2f2f2f]"
 						>
 							{track.description ?? 'Selected for you.'}
 						</div>
