@@ -67,6 +67,6 @@
 	src={image}
 	alt=""
 	aria-hidden="true"
-	class={`pointer-events-none fixed top-1/2 left-1/2 z-50 h-auto max-w-none -translate-x-1/2 -translate-y-1/2 transition-transform ease-in-out ${imageClass}`}
+	class={`pointer-events-none fixed top-1/2 left-1/2 z-99999 h-auto max-w-none -translate-x-1/2 -translate-y-1/2 transition-transform ease-in-out ${imageClass}`}
 	style={imageStyle}
 />
