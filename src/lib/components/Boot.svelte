@@ -19,6 +19,7 @@
 	const imageUrls = Object.values(imageModules) as string[];
 	const fontUrls = Object.values(fontModules) as string[];
 	const otherUrls: string[] = [];
+	const MESSAGE = 'Wait, just a second...'
 
 	let ready = $state(false);
 	let loaded = $state(0);
@@ -72,7 +73,7 @@
 	<div class="fixed inset-0 grid place-items-center bg-[#FDFBF7] text-[#2f2f2f]">
 		<div class="w-80">
 			<div class="flex justify-between">
-				<p class="mb-2 text-sm font-bold">Wait a minute, love…</p>
+				<p class="mb-2 text-sm font-bold">{MESSAGE}</p>
 				<p class="mb-2 text-sm font-bold">{loaded}/{total}</p>
 			</div>
 			<div class="h-3 overflow-hidden rounded border-2 border-[#2f2f2f] bg-white">
