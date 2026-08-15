@@ -94,7 +94,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'Soft Machine',
 		spotifyUrl: 'https://open.spotify.com/track/0o5LHjVdI1MWKy59vwyfmA',
 		description:
-			'I love Mellotron, Moogs, and synths btw. And this track visualise the certainty of your kindness in a psychedelic sense. Hippie..'
+			'Love Mellotron, Moogs, and synths btw. And this track visualise the certainty of your kindness in a psychedelic sense. Hippie..'
 	},
 	{
 		title: 'The Drum',
@@ -122,7 +122,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'Camel',
 		spotifyUrl: 'https://open.spotify.com/track/35e4fhZkQuQo77kOro2QYF',
 		description:
-			"You've listened to this before. My later impression is, I think I am no longer feel relate to this track, my lady fantasy."
+			"You've listened to this before. My later impression is, I think I am no longer feel relate to this track, you're no longer my lady fantasy."
 	},
 	{
 		title: 'Vienna',
@@ -143,7 +143,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'Deep Purple',
 		spotifyUrl: 'https://open.spotify.com/track/0S3DtjjlGRSpM6MuTt8nfW',
 		description:
-			"One hard rock slipped in here. Listen to the rock, does it rings a bell? My desire to meet you is growing stronger every tick, that I thought you call my name in my sleep! That's weird!"
+			"One hard rock accidentally slipped in here. Listen to the rock, does it rings a bell? The desire to meet you is growing stronger every tick, that I thought you call my name in my sleep. That's weird!"
 	},
 	{
 		title: 'Make A Wish (Birthday Song)',
@@ -157,7 +157,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'The Mamas & The Papas',
 		spotifyUrl: 'https://open.spotify.com/track/1mFrjW8e8fuAOowlU3Q3Dr',
 		description:
-			"If you read the title, yes that's what the title's about. Do I need to elaborate more about my feelings?"
+			"If you read the title, yes that's what the title's about. Do I need to elaborate more about the feelings?"
 	},
 	{
 		title: 'Tell All the People',
@@ -192,7 +192,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'Paul McCartney',
 		spotifyUrl: 'https://open.spotify.com/track/1Qa0Y05al633fG8f9Peytc',
 		description:
-			"I always gets amazed by everything my whole life. And now I'm amazed by everything you do. Maybe I'm just amazed."
+			"I always get amazed by everything my whole life. And now I'm amazed by everything you do. Maybe I'm just amazed."
 	},
 	{
 		title: 'All Things Must Pass',
@@ -206,7 +206,7 @@ export const tracksList: PlaylistTrack[] = [
 		artist: 'Sal Priadi',
 		spotifyUrl: 'https://open.spotify.com/track/1E7zLPDdqo0OvzVmGj5aoV',
 		description:
-			'No description needed. The title is literally my prayer (not what the song means though).'
+			"No description needed. I mean, look at the title, it's literally my prayer. I don't want the 'real' story of the track becomes real, though."
 	},
 	{
 		title: 'Think Of Me With Kindness',
